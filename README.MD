@@ -1,6 +1,6 @@
 # READ ME!!
 ##
-This is a basic cache simulator I designed inComputer Archiecture course. Supports set-associative cache as well as direct map cache (when set associativity = 1). 
+This is a basic cache simulator I designed for a Computer Architecture course. Supports set-associative cache as well as direct mapped cache (when set associativity = 1). 
 Currently this runs over select 'addresses' for testing purposes. I intend to refactor the main file for more user input regarding reading/writing to the memory.
 
 
