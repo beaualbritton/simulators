@@ -1,4 +1,9 @@
 # READ ME!!
+##
+This is a basic cache simulator I designed inComputer Archiecture course. Supports set-associative cache as well as direct map cache (when set associativity = 1). 
+Currently this runs over select 'addresses' for testing purposes. I intend to refactor the main file for more user input regarding reading/writing to the memory.
+
+
 ## RUN THE EXECUTABLE `runme.exe`
 
 There is already an .exe file for this project included in the .zip. For whatever reason, if this doesn't work, this can be manually compiled with a C/C++ compiler of your choosing.
