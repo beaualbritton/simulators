@@ -1,3 +1,3 @@
 # Simulators
 
-These are some simulator's are built. Mostly in C++. Some light python scripting.
+These are some simulators I built. Mostly in C++. Some light python scripting.
