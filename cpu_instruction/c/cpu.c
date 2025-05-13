@@ -31,6 +31,48 @@ Instruction ID(int instruction)
   RS2 = (instruction >> 16) & 0XF;
   immed = instruction & 0XFFFF;
 
+//TODO: FINISH IMPLEMENTING 
+//altering ID for more risc-v like decode, using RISCV 
+//bit order instead of my own little endian, was checking highest order. now checking lowest first (for opcode)
+//this is not a full risc-v implementation, so i will not be implementing funct3 and funct7 with opcodes.
+//  opcode = instruction & 0x7F;
+//  int parsed_opcode;
+//
+//  switch(opcode)
+//  {
+//    case 0x33: parsed_opcode = ADD; break;        
+//    case 0x13: parsed_opcode = ADDI; break;       
+//    case 0x63: parsed_opcode = BEQ; break;        
+//    case 0x6F: parsed_opcode = JAL; break;        
+//    case 0x03: parsed_opcode = LW; break;         
+//    case 0x23: parsed_opcode = SW; break;         
+//    case 0x67: parsed_opcode = RETURN; break;     
+//    default:   parsed_opcode = NOOP; break;
+//  };
+//
+//
+//  RD = (instruction >> 7) & 0x1F;
+//  RS1 = (instruction >> 15) & 0x1F;
+//  RS2  = (instruction >> 20) & 0x1F;
+//  immed = instruction >> 20;
+//
+//  //but with that in mind i have to watch out for JALR (found in line 30 of riscv_test.s) since it's not a covered opcode
+//  if(opcode == 0x67)
+//    opcode = 7;
+//  
+//  //also must keep B-type immediates in mind. For 'i' types (ADD, SW, LW) immediate is stored in the last 12 bits (from 20 to 31)
+//  //so bitshift (>>) with 20 works well. NOT THE CASE FOR B-TYPES. this almost killed me 
+//
+//  if(opcode == 0x63)
+//  {
+//    int b_instruction;
+//    //13 bits scattered across 32 bit address. 31-25, 11-8, 7
+//    b_instruction = ((instruction >> 31) & 1) << 12;
+//    b_instruction += ((instruction >> 7) & 1) << 11;
+//    b_instruction += ((instruction >> 25) & 0x3F) << 5;
+//    b_instruction += ((instruction >> 8) & 0xF) << 1;
+//    immed = (b_instruction<<19)>>19;
+//  }
   return new_instruction((OPCODE)opcode,RD,RS1,RS2,immed);
 }
 
@@ -43,7 +85,9 @@ void write_register(CPU* cpu, int reg, int value)
 void EX(CPU* cpu, Instruction instruction)
 {
 
-  printf(">> EX: opcode=%d RD=%d RS1=%d RS2=%d imm=%d\n",
+ printf(">> mem@pc =[%d]@pc->%d\nEX: opcode=%d RD=%d RS1=%d RS2=%d imm=%d\n",
+             cpu->memory[cpu->pc],
+             cpu->pc,
              instruction.opcode,
              instruction.RD,
              instruction.RS1,
