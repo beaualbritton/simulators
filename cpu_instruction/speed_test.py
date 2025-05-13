@@ -24,9 +24,9 @@ def run_c():
         os.remove("./main.exe")
     tick = time.time();
     subprocess.run(
-        ["clang", "-o", "main",
+        ["gcc", "-o", "main",
          "c/main.c", "c/cpu.c", "c/instruction.c"],
-        check=True)
+        )
     tock = time.time();
     measured_times["c_cmp"] = tock-tick
     print(f"C compile time: {measured_times['c_cmp']:.6f}s\n")
