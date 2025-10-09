@@ -62,10 +62,10 @@ int main ()
 
 
     /**
-     * PART 2 ADDRESSES 1 (WB)
+     * (WB)
      */
     std::cout << "-------------------------------------" << std::endl<<
-    "PART 2 ADDRESSES 1 (WRITE BACK)" <<  std::endl
+    "(WRITE BACK)" <<  std::endl
     << "-------------------------------------" << std::endl;
 
     cache.readWord(1152);
@@ -93,10 +93,10 @@ int main ()
     cache.readWord(17532);
 
     /**
-     * PART 2 ADRESSES 1 (WT)
+     *  (WT)
      */
     std::cout << "-------------------------------------" << std::endl<<
-    "PART 2 ADDRESSES 1 (WRITE THROUGH)" <<  std::endl
+    "(WRITE THROUGH)" <<  std::endl
     << "-------------------------------------" << std::endl;
     cache.readWord(1152);
     cache.readWord(2176);
@@ -123,7 +123,7 @@ int main ()
     cache.readWord(17532);
 
     std::cout << "-------------------------------------" << std::endl<<
-    "PART 2 ADDRESSES 2 (WRITE BACK)" <<  std::endl
+    "ADDRESSES 2 (WRITE BACK)" <<  std::endl
     << "-------------------------------------" << std::endl;
     cache.readWord(46916);
     cache.readWord(46932);
@@ -137,7 +137,7 @@ int main ()
      * PART 2 ADRESSES 2 (WT)
      */
     std::cout << "-------------------------------------" << std::endl<<
-    "PART 2 ADDRESSES 2 (WRITE THROUGH)" <<  std::endl
+    "ADDRESSES 2 (WRITE THROUGH)" <<  std::endl
     << "-------------------------------------" << std::endl;
     cache.readWord(46916);
     cache.readWord(46932);
@@ -152,7 +152,7 @@ int main ()
      * PART 2 ADRESSES 3 (read only)
      */
     std::cout << "-------------------------------------" << std::endl<<
-    "PART 2 ADDRESSES 3 (read-only)" <<  std::endl
+    "ADDRESSES 3 (read-only)" <<  std::endl
     << "-------------------------------------" << std::endl;
     cache.readWord(0);
     cache.readWord(13432);
@@ -167,7 +167,6 @@ int main ()
     cache.readWord(33156);
     cache.readWord(49604);
     cache.readWord(516);
-
 
 
 

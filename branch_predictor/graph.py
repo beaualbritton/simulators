@@ -12,7 +12,7 @@ Takes a few arguments:
 """
 
 #imports
-import sys
+import sys, os
 import matplotlib.pyplot as plt
 
 #Getting parameters as system arguments
@@ -38,6 +38,6 @@ plt.pie(values, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
 
 #Using f string for title and file output. Unique for each
 plt.title(f"Accuracy for {bitCountAmt}BitPredictor with {outFile} as input file ({correct}/{total})")
-
+outFile = os.path.basename(outFile)
 plt.savefig(f"{bitCountAmt}BitPredictor-{outFile}-Results.png")
 plt.show()

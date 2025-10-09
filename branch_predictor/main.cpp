@@ -144,7 +144,7 @@ int main()
 
     string filepath = "graph.py";
     //Chunky command to run
-    string command = "py " + filepath + " " + to_string(totalCount) + " " + to_string(numCorrect) + " " + to_string(bitCountAmt) + " " +inputString;
+    string command = "python3 " + filepath + " " + to_string(totalCount) + " " + to_string(numCorrect) + " " + to_string(bitCountAmt) + " " +inputString;
 
     /**
      * Calling system method. Using c_str() since it adds a terminatiing character for proper output to python
